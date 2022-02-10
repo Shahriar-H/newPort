@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./resource/owl.carousel.min.css">
+    <link rel="stylesheet" href="./resource/owl.theme.default.min.css">
+    <title>Shahriars' World</title>
+    <link rel="stylesheet" href="./resource/style.css">
+    <style>
+        
+        form{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            
+        }
+        .card{
+            position: absolute;
+            background-color: rgb(17, 17, 17,0.9);
+            height: 84%;
+            width: 92%;
+            display: none;
+        }
+        .shono{
+            display: block;
+        }
+        .time{
+            display: none;
+        }
+        .bgvdo{
+            position: fixed;
+            min-height: 100%;
+            min-width: 100%;
+        }
+        .active1{
+            background-color: red !important;
+            width: 100px;
+            padding: 5px 10px 5px 10px;
+        }
+        .owl-item{
+            width: 220px !important;
+        }
+        .owl-carousel{
+            background-color: black;
+        }
+        
+        .item:hover{
+            bottom: -100px;
+        }
+        .item img{
+            height: 220px;
+            width:100% !important;
+            
+        }
+    </style>
+</head>
+<p class="respon">Sorry You are not able to see thi page in your device</p>
+<body id="body" onscroll="scrollit()">
+<!-- <video class="bgvdo" autoplay muted loop src="./photos/bg.mp4"></video> -->
+    <div class="makeitflex" data-0="transform:translateX(0%);" data-160="transform:translateX(-300%);">
+    <div class="bgvdo1"></div>
+        <div class="sticydiv">
+            <div class="hompage">
+                <div class="headcont" data-aos="slide-down" data-aos-duration="1000">
+                    <div class="name">
+                        <a href=""><img src="./photos/name.png" alt=""></a>
+                    </div>
+                    <div class="menus">
+                        <ul>
+                            <li><a href="" class="active1">Home</a></li>
+                            <li><a href="#sec2" id="about">About</a></li>
+                            <li><a href="#sec3">Services</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="search">
+                        <i class="fas fa-search"></i>
+                        <i class="devider">|</i>
+                        <input type="text" name="search" placeholder="Search">
+                    </div>
+                </div>
+                <div class="bodycont" id="homebody">
+                    <div class="paraside">
+                        <div>
+                            <div class="title" data-aos="slide-right" data-aos-duration="1000">
+                                <img src="./photos/web.png" alt="">
+                            </div>
+                            <ul data-aos="fade-out" style="margin-top: 10px;" data-aos-duration="1000">
+                                <li>2019</li>
+                                <li><span>4.5+</span></li>
+                                <li>8640+ Hour</li>
+                                <li>Freelacher</li>
+                            </ul>
+                            <br>
+                            <div class="para" data-aos="zoom-in" data-aos-duration="2000">
+                                <p>
+                                    I'm Shahriar Hussain, a software developer. I have started my journey in this sector on 2019. Now I'm working at a software firm as a part-time software developer. I have given here all the details that may you need to get about my skills and experiance. I am working and learning new technologies that may help me to keep stand in this sector. I am from Dhaka, Bangladesh.
+                                </p>
+                            </div>
+                            <br>
+                            <div class="buttons" data-aos="slide-right" data-aos-duration="1000">
+                                <!-- <button><i class="fas fa-play"></i> <a href="#sec2">Read More</a></button> -->
+                                <!-- <button><i class="fas fa-plus"></i> My List</button> -->
+                            </div>
+                            <br><br><br><br>
+                            <div>
+                                <button class="watch" ><i class="fas fa-play"></i> WATCH ME</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photoside" data-aos="slide-up" data-aos-duration="1000">
+                        <img src="./photos/second.png" alt="">
+                    </div>
+                    <div class="gbox">
+                        <div class="gearbox"></div>
+                        <a onclick="showcard()" class="giftv" href="#"><i class="fas fa-gift gear"></i><i class="fas fa-times time gear"></i></a>
+                    </div>
+ 
+                    <script>
+                        function showcard(){
+                            document.getElementById('card').classList.toggle('shono');
+                            document.getElementsByClassName('gear')[1].classList.toggle('time');
+                            // document.getElementsByClassName('gear')[0].classList.toggle('time');
+                        }
+                    </script>
+                    <div class="card" id="card">
+                    <?php 
+                        include "../strip/config.php";
+                    ?>
+                    <form action="submit.php" method="post" class="cardis">
+                        <!-- <div class="borf">
+                            <label>Amount:</label><br>
+                            <input required type="text" name="amountis" placeholder="How much"><br><br>
+                        </div> -->
+                        <br>
+                        <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="<?php echo $publishableKey; ?>"
+                            data-name="Donate Shaki"
+                            data-amount="500"
+                            data-description="Buy a cup of tea for Shaki"
+                            data-image="https://i.imgur.com/ku20DqM.png"
+                            data-currency="usd"
+                        >
+                        </script>
+                    </form>
+                    </div>
+                </div>
+                <!-- 
+                    ######################################
+                    About Section Start 
+                    ###########################
+                -->
+                <div class="bodycont aboutmain" id="aboutbody">
+                    <div class="aboutbody" >
+                        <div class="circl cirecle1" id="photo" onmouseover="hoverit()" data-aos="slide-right" data-aos-duration="1000">
+                            <img id="myphoto"  src="./photos/myphoto.png" alt="">
+                        </div>
+                        <div class="circl cirecle2" data-aos="flip-left" data-aos-duration="1000" >
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum officiis quasi minima pariatur, corporis sint inventore perferendis magnam minus omnis molestias voluptatem quaerat? Reiciendis architecto ut tenetur cumque et accusantium unde aspernatur? Dignissimos accusamus incidunt impedit maxime. Architecto quos vel quidem omnis ipsam quae placeat nam, perspiciatis molestiae aut aperiam!</p>
+                        </div>
+                            
+                        <div class="circl cirecle3" data-aos="slide-left" data-aos-duration="1000">
+                            <h2>SHAHRIAR H</h2>
+                            <p style="font-style:italic ;">Full Stack Web Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="sticydiv">
+            <div class="hompage">
+                <div class="intro">
+                    <h1>I'm Familer With</h1>
+                    <p>I have mentioned those technology that I have used in my various successful project. I think I have proper knowladge about those technologies. There have some framework also which are make myself stronger on the related programing language</p>
+                </div>
+                <div class="skills">
+                    <h2>Skills</h2>
+                </div>
+                
+                <div class="allskills">
+                    <div class="skills5">
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/html.png" alt="">
+                                <h4>HTML</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/css.png" alt="">
+                                <h4>CSS</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/js.png" alt="">
+                                <h4>JAVASCRIPT</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/mysql.png" alt="">
+                                <h4>MYSQL</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/php.png" alt="">
+                                <h4></h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/ps.png" alt="">
+                                <h4>PHOTOSHOP</h4>
+                            </div>   
+                        </div>
+                    </div>
+                    <br>
+                    <div class="skills5">
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="https://upload.wikimedia.org/wikipedia/commons/3/32/C%2B%2B_logo.png" alt="c++">
+                                <h4>C++</h4>
+                            </div>
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/react.png" alt="">
+                                <h4>REACT</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/sass.png" alt="">
+                                <h4>SASS</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/ex.png" alt="">
+                                <h4>Browser Extn</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/react.png" alt="">
+                                <h4>React Native</h4>
+                            </div>   
+                        </div>
+                        <div class="skillis">
+                            <div class="icen">
+                                <img style="max-width: 70px;" src="./photos/es6png.png" alt="">
+                                <h4>ES6</h4>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sticydiv">
+            <div class="hompage">
+                <div class="intro">
+                    <h1>Services</h1>
+                    <p>
+                        I have proper experiance on those sector have mentioned below. In project from my clients make me more professional, skillfull and active. I have done several project for each of the category I have mentioned. 
+                    </p>
+                </div>
+                <script>
+                    function outblur(){
+                        document.getElementById('serv').style.filter="blur(0px)";
+                        document.getElementsByClassName('eyestyle')[0].style.display='none';
+                    }
+                </script>
+                <i class="fas fa-eye eyestyle" onclick="outblur()"></i>        
+                <div class="services" id="serv">
+                    <div class="service2">
+                        <div class="service ser1">
+                            <div class="rapit">
+                                <h3>PSD to HTML</h3>
+                                <p>I have convert almost 20-30 PSD into HTML. Sometimes I did it for growing skill and many of them were for my respective clients</p>
+                            </div>
+                            <div class="rapimg">
+                                <img style="max-width: 80px;" src="./photos/ps.png" alt="">
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="rapit">
+                                <h3>Any Mock-up to HTML</h3>
+                                <p>I worked also with some image, pdf ect format to convert into HTML </p>
+                            </div>
+                            <div class="rapimg">
+                                <img style="max-width: 80px;" src="./photos/gift.gif" alt="">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="service2">
+                        <div class="service">
+                            <div class="rapit">
+                                <h3>Android App Development</h3>
+                                <p>I have successfully build a quiz Application name "QUIZLIG" and a well featured contact application named "Swipe Call". </p>
+                            </div>
+                            <div class="rapimg">
+                                <img style="max-width: 80px;" src="https://upload.wikimedia.org/wikipedia/commons/4/41/APK_format_icon_%282014-2019%29.png" alt="">
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="rapit">
+                                <h3>Laravel E-commerce</h3>
+                                <p>I will build any customize E-commerce application with extra feature useing Laravel</p>
+                            </div>
+                            <div class="rapimg">
+                                <img style="max-width: 80px;" src="./photos/laravel1.png" alt="">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="service2">
+                        <div class="service">
+                            <div class="rapit">
+                                <h3>Web Development</h3>
+                                <p>Any website with custom functionality and design will be made for your business, portfolio, crypto, photography etc.</p>
+                            </div>
+                            <div class="rapimg">
+                                <img style="max-width: 80px;" src="./photos/webdesign.png" alt="">
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="rapit">
+                                <h3>Business Website Design & Developement</h3>
+                                <p>To grow up your etaire business I provide the full functional and website with dashboard for maintain the dynamic content. </p>
+                            </div>
+                            <div class="rapimg">
+                                <img style="max-width: 80px;" src="./photos/company.png" alt="">
+                            </div>
+                        </div>
+                    </div><br>
+                </div>
+                
+               
+            </div>
+        </div>
+        <div class="sticydiv">
+            <div class="hompage portfolioSecShowd">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="./photos/portfolio.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio1.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio4.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio5.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio6.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio7.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio8.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                    <div class="item">
+                        <img src="./photos/portfolio4.png" alt="">
+                        <a class="seeItemInOtherBrowser" href="/">See</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="skrollr.js"></script>
+	<script type="text/javascript">
+	    var s = skrollr.init();
+	</script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./resource/jquery-3.6.0.min.js"></script>
+    <script src="./resource/owl.carousel.js"></script>
+    <script>
+       AOS.init();
+    </script>
+    <script>
+  
+       document.getElementById('about').addEventListener('click', function(){
+            document.getElementById('aboutbody').style.display='grid';
+            document.getElementById('homebody').style.display='none';
+            
+       });
+       
+    </script>
+    <script>
+        // $(document).ready(function(){
+        //     $(".owl-carousel").owlCarousel({
+        //         loop:true,
+        //         autoplay:true,
+        //         item:1,
+        //         autoplayTimeout:100,
+        //     });
+        // });
+        $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                margin: 10,
+                nav: true,
+                loop: true,
+                autoplay: true,
+                responsive: {
+                  0: {
+                    items: 1
+                  },
+                  600: {
+                    items: 3
+                  },
+                  1000: {
+                    items: 5
+                  }
+                }
+              })
+            })
+    </script>
+</body>
+</html>
